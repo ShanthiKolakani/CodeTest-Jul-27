@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+    <title>Register With Us</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="CSS/bootstrap.css">
+</head>
+<body class="container-fluid">
+<section class="container-fluid p-5">
+    <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-log-6 col-md-8 cl-sm-10">
+        <div class="text-center text-secondary">
+            <h3>Register With Us</h3>
+        </div>
+        <form class="tex-muted" onsubmit="return validation()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="user" autocomplete="off">
+                <span id="username" class="text-danger font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" autocomplete="off">
+                <span id="emailId" class="text-danger font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" id="paswd" autocomplete="off">
+                <span id="password" class="text-danger font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="text" class="form-control" id="cpaswd" autocomplete="off">
+                <span id="confirmpassword" class="text-danger font-weight-bold"></span>
+            </div>
+                  <input type="Submit" name="Submit" value="Submit" class="btn btn-danger btn-block" autocomplete="off">
+
+        </form>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+   
+   
+    function validation(){
+
+        var user = document.getElementById('user').value;
+        var email = document.getElementById('email').value;
+        var paswd = document.getElementById('paswd').value;
+        var cpaswd = document.getElementById('cpaswd').value;
+
+
+
+        if(user == ""){
+            document.getElementById('username').innerHTML="Please enter your fullname";
+        return false;
+        }
+        
+        if((user.length <=2) || (user.length > 20)){
+            document.getElementById('username').innerHTML="Username must be at least 3 characters";
+            return false;
+            }
+        if(!isNaN(user)){
+            document.getElementById('username').innerHTML="Only characters are allowed";
+            return false;
+           }
+        
+       
+        
+        if(email == "")
+        {
+            document.getElementById('emailId').innerHTML="Enter valid Email";
+        return false;
+        }
+       if(emails.indexOf('@') < 0)
+       {
+           document.getElementById("emailId").innerHTML="Email is not valid";
+       }
+       if((emails.charAt(email.length-4)!=".") && (emails.charAt(email.length-3)!=".")){
+        document.getElementById("emailId").innerHTML="Email is not valid";
+       }
+        
+
+
+        if(paswd == ""){
+            document.getElementById('password').innerHTML="Please use strong password";
+        return false;
+        }
+        if((paswd.length <=5) || (paswd.length > 20)){
+            document.getElementById('password').innerHTML="Password must be at least 6 characters";
+            return false;
+        
+        }
+        
+        if(cpaswd == ""){
+            document.getElementById('confirmpassword').innerHTML="Password 2 is required";
+        return false;
+        }
+        if(paswd!=cpaswd) {
+            document.getElementById('password').innerHTML="Password is not matching";
+            return false;
+        
+        }
+    }
+</script>
+</section>
+</body>
+</html>
